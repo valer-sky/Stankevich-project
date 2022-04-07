@@ -1,0 +1,54 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Bangers', cursive;
+}
+
+.wrapper {
+	height: 100vh;
+	display: flex;
+	background-color: #465a5a;
+}
+.memo-game {
+	width: 650px;
+	height: 650px;
+	margin: auto;
+	display: flex;
+	flex-flow: row wrap;
+	perspective: 1000pz;
+}
+.memo-card {
+	width: calc(25% - 10px);
+	height: calc(33,333% - 10px);
+	margin: 5px;
+	transform: scale(1);
+	position: relative;
+	transition: transform 0.5s;
+	transform-style: preserve-3d;
+}
+.memo-card.flip {
+	transform:rotateY(180deg);
+}
+/* .memo-card:active {
+	transform: scale(0.97);
+	transition: transform 0.2s;
+} */
+/* .back-face {
+	width: 100px;
+	height: 100px;
+} */
+
+.front-face, 
+.back-face {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	position: absolute;
+	border-radius: 5px;
+	background-color: orangered;
+	backface-visibility: hidden;
+}
+.front-face {
+	transform:rotateY(180deg);
+}
