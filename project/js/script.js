@@ -5,6 +5,8 @@ let hasFlipCard = false; // Перевернута ли карточка
 let boardLocked = false; //Запрет на кликание по другим карточкам пока открыты две одновременно
 let firstCard; // сохроняем в переменнные DOM элементы для дальнейшнго сравнения
 let secondCard;
+console.log(cards);
+
 
 const flipCard = (e) => {
     if(boardLocked) return;
@@ -55,3 +57,6 @@ cards.forEach(card => {
     const randomIndex = Math.floor(Math.random() * cards.length);
     card.style.order = randomIndex;
 });
+
+
+
