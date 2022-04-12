@@ -11,10 +11,7 @@ html {
 	font-family: sans-serif;
 	font-size: 10px;
 }
-.red {
-    /* z-index: 0; */
-    position: relative;
-}
+
 
 .container {
 	width: 100%;
