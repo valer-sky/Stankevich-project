@@ -14,90 +14,105 @@
 <body>
     
     <div class="wrapper">
-      <section class="memo-game">
+        <div class="info">
+            <div class="info__line">
+              <span>Time:</span>
+              <span id="timer" data-started>00:00:00</span>
+            </div>
+            <div class="info__line">
+              <span>Steps:</span>
+              <span id="steps">0</span>
+            </div>
+          </div>
+          <div class="field" id="field"></div>
+          <div class="restart">
+            <button id="restart">Restart</button>
+          </div>
+          <!--<section class="memo-game">
           <div class="memo-card" data-ikon="harp">
               <img class="front-face" src="img/1.png" alt="front-face"/>
               <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-          </div>
+          <!-- </div>
           <div class="memo-card" data-ikon="harp">
             <img class="front-face" src="img/1.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="maracas">
+        <!-- </div> -->
+        <!-- <div class="memo-card" data-ikon="maracas">
             <img class="front-face" src="img/2.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="maracas">
+        <!-- </div> -->
+        <!-- <div class="memo-card" data-ikon="maracas">
             <img class="front-face" src="img/2.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="guitar">
+        <!-- </div> --> 
+        <!-- <div class="memo-card" data-ikon="guitar">
             <img class="front-face" src="img/3.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="guitar">
-            <img class="front-face" src="img/3.png" alt="front-face"/>
+        <!-- </div> --> 
+        <!-- <div class="memo-card" data-ikon="guitar"> -->
+            <!-- <img class="front-face" src="img/3.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
+        <!-- </div>
         <div class="memo-card" data-ikon="gusli">
             <img class="front-face" src="img/4.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="gusli">
+        <!-- </div> --> 
+        <!-- <div class="memo-card" data-ikon="gusli">
             <img class="front-face" src="img/4.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="trumpet">
+        <!-- </div> --> 
+        <!-- <div class="memo-card" data-ikon="trumpet">
             <img class="front-face" src="img/5.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="trumpet">
+        <!-- </div> --> 
+        <!-- <div class="memo-card" data-ikon="trumpet">
             <img class="front-face" src="img/5.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="tambourine">
+        <!-- </div> --> 
+        <!-- <div class="memo-card" data-ikon="tambourine">
             <img class="front-face" src="img/6.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="tambourine">
+        <!-- </div> --> 
+        <!-- <div class="memo-card" data-ikon="tambourine">
             <img class="front-face" src="img/6.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
+        <!-- </div> -->
+        <!-- <div class="memo-card" data-ikon="bongs">
+            <img class="front-face" src="img/7.png" alt="front-face"/>
+            <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
+        <!-- </div>
         <div class="memo-card" data-ikon="bongs">
             <img class="front-face" src="img/7.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="bongs">
-            <img class="front-face" src="img/7.png" alt="front-face"/>
-            <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="xylophone">
+        <!-- </div> -->
+        <!-- <div class="memo-card" data-ikon="xylophone">
             <img class="front-face" src="img/8.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="xylophone">
+        <!-- </div> -->
+        <!-- <div class="memo-card" data-ikon="xylophone">
             <img class="front-face" src="img/8.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="domra">
+        <!-- </div> -->
+        <!-- <div class="memo-card" data-ikon="domra">
             <img class="front-face" src="img/9.png" alt="front-face"/>
-            <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        <</div>
-        <div class="memo-card" data-ikon="domra">
-            <img class="front-face" src="img/9.png" alt="front-face"/>
-            <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="bagpipes">
+            <img class="back-face" src="img/back.jpg"" alt="back-face"/> рубашка -->
+        <!-- </div> -->
+        <!-- <div class="memo-card" data-ikon="domra"> -->
+            <!-- <img class="front-face" src="img/9.png" alt="front-face"/> -->
+            <!-- <img class="back-face" src="img/back.jpg"" alt="back-face"/> рубашка -->
+        <!-- </div> -->
+        <!-- <div class="memo-card" data-ikon="bagpipes">
+            <img class="front-face" src="img/10.png" alt="front-face"/>
+            <img class="back-face" src="img/back.jpg"" alt="back-face"/> рубашка -->
+        <!-- </div> -->
+        <!-- <div class="memo-card" data-ikon="bagpipes">
             <img class="front-face" src="img/10.png" alt="front-face"/>
             <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-        <div class="memo-card" data-ikon="bagpipes">
-            <img class="front-face" src="img/10.png" alt="front-face"/>
-            <img class="back-face" src="img/back.jpg"" alt="back-face"/> <!--рубашка-->
-        </div>
-      </section>
-    </div>
+        <!-- </div>
+      <!-- </section> -->
     
+      
+    </div>
         <nav class="header__nav nav-bar">
                 <div class="toggle-menu">
                     <div class="line line1"></div>
