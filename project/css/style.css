@@ -1,6 +1,9 @@
 * {
 	padding: 0;
 	margin: 0;
+	/*  */
+	width: 100%;
+    
 	box-sizing: border-box;
 	font-family: 'Bangers', cursive;
 }
@@ -10,8 +13,13 @@
 	
 	display: flex;
 	background: url(/project/img/background.jpg);
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100vw 100vh;
+    overflow: hidden;
 	/* background: rgb(82, 82, 149); */
-	background-size: cover;
+	/* background-size: cover; */
 }
 .memo-game {
 	width: 650px;
