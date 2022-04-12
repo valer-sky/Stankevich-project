@@ -1,4 +1,9 @@
 // "use strict";
+var toggleButton = document.querySelector('.toggle-menu');
+var navBar = document.querySelector('.nav-bar');
+toggleButton.addEventListener('click', function () {
+	navBar.classList.toggle('toggle');
+});
 
 const cards = document.querySelectorAll('.memo-card'); // Получаем массив элементов - карточек
 let hasFlipCard = false; // Перевернута ли карточка
