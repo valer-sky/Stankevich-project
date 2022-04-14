@@ -78,7 +78,7 @@
 	width: auto;
 	display: inline-block;
 	color: rgb(255, 254, 254);
-	transform: translate(300px, 100px);
+	transform: translate(200px, 50px);
 }
   
 /* .info__line {
@@ -87,8 +87,8 @@
 } */
 span {
 	color: rgb(255, 255, 255);
-	font-size: 28px;
-	/* margin: 0px; */
+	font-size: 18px;
+	margin: 20px;
 	/* padding: 5px; */
 	
 } 
@@ -173,7 +173,7 @@ span {
 	flex-flow: row wrap;
 	margin: auto;
 	width: 600px;
-	height: 600px;
+	height: 400px;
 	
 	background: #567;
 }
