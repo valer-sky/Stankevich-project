@@ -6,27 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/nav.css">
-
     <title>MeMo</title>
-    
-     
 </head>
 <body>
-    
-    <div class="wrapper">
+     <div class="wrapper">
+         <div class="game__container">
         <div class="info">
-            <div class="info__line">
-              <span>Time:</span>
-              <span id="timer" data-started>00:00:00</span>
+            <div class="info__time">
+              <p>Time:</p>
+              <p id="timer" data-started>00:00:00</p>
             </div>
-            <div class="info__line">
-              <span>Steps:</span>
-              <span id="steps">0</span>
+            <div class="info__steps">
+              <p>Steps:</p>
+              <p id="steps">0</p>
             </div>
           </div>
           <div class="field" id="field"></div>
           <div class="restart">
             <button id="restart">Restart</button>
+          </div>
           </div>
           <!--<section class="memo-game">
           <div class="memo-card" data-ikon="harp">
