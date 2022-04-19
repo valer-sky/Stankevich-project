@@ -5,117 +5,35 @@ toggleButton.addEventListener('click', function () {
 	navBar.classList.toggle('toggle');
 });
 
-// let cardsContent = [
-//   {
-    
-//     img: 'images/1.png'
-//   },
-//   {
-    
-//     img: 'images/2.png'
-//   },
-//   {
-   
-//     img: 'images/3.png'
-//   },
-//   {
-    
-//     img: 'images/4.png'
-//   },
-//   {
-    
-//     img: 'images/5.png'
-//   },
-//   {
-    
-//     img: 'images/6.png'
-//   },
-//   {
-    
-//     img: 'images/7.png'
-//   },
-//   {
-//     img: 'images/8.png'
-//   },
-//   {
-    
-//     img: 'images/9.png'
-//   },
-//   {
-    
-//     img: 'images/10.png'
-//   },
-//   // {
-    
-  //   img: 'images/1.png'
-  // },
-  // {
-    
-  //   img: 'images/2.png'
-  // },
-  // {
-    
-  //   img: 'images/3.png'
-  // },
-  // {
-    
-  //   img: 'images/4.png'
-  // },
-  // {
-    
-  //   img: 'images/5.png'
-  // },
-  // {
-   
-  //   img: 'images/6.png'
-  // },
-  // {
-    
-  //   img: 'images/7.png'
-  // },
-  // {
-    
-  //   img: 'images/8.png'
-  // },
-  // {
-    
-  //   img: 'images/9.png'
-  // },
-  // {
-   
-  //   img: 'images/10.png'
-  // },
-// ];
-
-// console.log(cardArray);
-// cardArray.sort(() => 0.5 - Math.random());
-//create your board
-
-  // for (let i = 0; i < cardsContent.length; i++) {
-  //   const card = document.createElement('img');
-  //   card.setAttribute('src', 'img/back.jpg');
-  //   card.setAttribute('data-id', i);
-  //   card.style.cssText = `width: 100px; height: 100px;  position: relative; display: flex; flex-direction: row; 
-  //   flex-wrap: wrap;align-items: center;justify-content: center; border: 3px solid #000; cursor: pointer;
-  //   user-select: none; margin: 3px; padding: 2px;`;
-  //   // card.addEventListener('click',flipCard);
-  //   field.appendChild(card);
-    
-  // }
-
-
-  
-
-  
-
 let gameField      = document.getElementById('field');
 let restartButton  = document.getElementById('restart');
 let stepsCounter   = document.getElementById('steps');
 let timerUI        = document.getElementById('timer');
 let cardViewInHTML = '<div class="card card_closed" data-status="closed"></div>';
-// let cardsContent   = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,11,12];
-let cardsContent   = ['img/1.png', 'img/2.png', 'img/3.png', 'img/4.png', 'img/5.png', 'img/6.png', 'img/7.png', 'img/8.png', 'img/9.png', 'img/10.png', 'img/11.png', 'img/12.png'];
-console.log(cardsContent);
+
+// let cardsContent   = [src='img/1.png', src='img/2.png', 'img/3.png', 'img/4.png', 'img/5.png', 'img/6.png', 'img/7.png', 'img/8.png', 'img/9.png', 'img/10.png', 'img/11.png', 'img/12.png'];
+
+
+let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
+
+
+  
+// Цикл по ключам
+// for (let key in cardsContent) {
+//     cardsContent[key] = new Image();
+//     cardsContent[key].src = `'img/' + ${key} + '.png'`;
+    
+//     }
+
+    // Метод Map()
+    // let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
+    // cardsContent = cardsContent.map((card) => {
+    //   let img = new Image();
+    //   img.src = `img/${card}.png`;
+    //     return img;
+    // });
+
+
 let openedCards    = [];
 let complitedCards = 0;
 let paused         = false;
@@ -205,6 +123,7 @@ function doubleCards(cardsContent) {
 function createCardsOnGameField(field) {
   for (let i = 0; i < cardsContent.length; i++) {
     field.insertAdjacentHTML('beforeend', cardViewInHTML);
+    // field.lastElementChild.innerHTML = '<img src="img/1.png">';
     field.lastElementChild.innerHTML = cardsContent[i];
   }
 }
