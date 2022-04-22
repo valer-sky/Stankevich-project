@@ -14,7 +14,7 @@ let cardViewInHTML = '<div class="card card_closed" data-status="closed"></div>'
 // let cardsContent   = [src='img/1.png', src='img/2.png', 'img/3.png', 'img/4.png', 'img/5.png', 'img/6.png', 'img/7.png', 'img/8.png', 'img/9.png', 'img/10.png', 'img/11.png', 'img/12.png'];
 
 
-let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
+// let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
 
 
   
@@ -26,12 +26,13 @@ let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
 //     }
 
     // Метод Map()
-    // let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
-    // cardsContent = cardsContent.map((card) => {
-    //   let img = new Image();
-    //   img.src = `img/${card}.png`;
-    //     return img;
-    // });
+    let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
+    cardsContent = cardsContent.map((card) => {
+      let img = new Image();
+      
+      img.src = `img/${card}.png`;
+        return img;
+    });
 
 
 let openedCards    = [];
@@ -86,7 +87,9 @@ restart.onclick = function() {
   // create cards in HTML
   for (let i = 0; i < cardsContent.length; i++) {
     gameField.insertAdjacentHTML('beforeend', cardViewInHTML);
-    gameField.lastElementChild.innerHTML = cardsContent[i];
+    // gameField.lastElementChild.innerHTML = cardsContent[i];
+    gameField.lastElementChild.innerHTML =  `<img src="' + cardsContent[i].getAttribute('src') + '">`;
+   
   }
   toggleTimer();
   stepsCounter.innerHTML = 0;
@@ -123,8 +126,11 @@ function doubleCards(cardsContent) {
 function createCardsOnGameField(field) {
   for (let i = 0; i < cardsContent.length; i++) {
     field.insertAdjacentHTML('beforeend', cardViewInHTML);
-    // field.lastElementChild.innerHTML = '<img src="img/1.png">';
-    field.lastElementChild.innerHTML = cardsContent[i];
+    //field.lastElementChild.innerHTML = '<img src="img/1.png">';
+    console.log(cardsContent[i].getAttribute('src'));
+    
+    field.lastElementChild.innerHTML = '<img class="card-image" src="' + cardsContent[i].getAttribute('src') + '">';
+    
   }
 }
 

@@ -161,6 +161,11 @@ p {
     user-select: none;
     background: white;
 }
+
+.card .card-image {
+	width: 100px;
+	height: 100px;
+}
   
 .card.card_closed::after {
     content: '';
