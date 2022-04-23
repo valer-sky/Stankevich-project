@@ -163,8 +163,18 @@ p {
 }
 
 .card .card-image {
-	width: 100px;
-	height: 100px;
+	width: 90px;
+	height: 90px;
+	position: relative; 
+	display: flex; 
+	flex-direction: row; 
+    flex-wrap: wrap;
+	align-items: center;
+	justify-content: center; 
+	cursor: pointer;
+    user-select: none; 
+	margin: 3px; 
+	padding: 2px;
 }
   
 .card.card_closed::after {
@@ -197,8 +207,8 @@ p {
 .game__container {
 	width: 100%;
 	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 /* @media (max-width: 615px) {

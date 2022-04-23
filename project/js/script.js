@@ -88,7 +88,7 @@ restart.onclick = function() {
   for (let i = 0; i < cardsContent.length; i++) {
     gameField.insertAdjacentHTML('beforeend', cardViewInHTML);
     // gameField.lastElementChild.innerHTML = cardsContent[i];
-    gameField.lastElementChild.innerHTML =  `<img src="' + cardsContent[i].getAttribute('src') + '">`;
+    gameField.lastElementChild.innerHTML =  '<img class="card-image" src="' + cardsContent[i].getAttribute('src') + '">';
    
   }
   toggleTimer();
