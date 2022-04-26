@@ -11,29 +11,13 @@ let stepsCounter   = document.getElementById('steps');
 let timerUI        = document.getElementById('timer');
 let cardViewInHTML = '<div class="card card_closed" data-status="closed"></div>';
 
-// let cardsContent   = [src='img/1.png', src='img/2.png', 'img/3.png', 'img/4.png', 'img/5.png', 'img/6.png', 'img/7.png', 'img/8.png', 'img/9.png', 'img/10.png', 'img/11.png', 'img/12.png'];
-
-
-// let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
-
-
-  
-// Цикл по ключам
-// for (let key in cardsContent) {
-//     cardsContent[key] = new Image();
-//     cardsContent[key].src = `'img/' + ${key} + '.png'`;
-    
-//     }
-
-    // Метод Map()
-    let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
+// Метод Map()
+let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
     cardsContent = cardsContent.map((card) => {
-      let img = new Image();
-      
-      img.src = `img/${card}.png`;
-        return img;
+     let img = new Image();
+     img.src = `img/${card}.png`;
+      return img;
     });
-
 
 let openedCards    = [];
 let complitedCards = 0;
@@ -94,7 +78,7 @@ restart.onclick = function() {
   toggleTimer();
   stepsCounter.innerHTML = 0;
   complitedCards = 0;
-  restartButton.hidden = true;
+  restartButton.hidden = false;
 }
 
 function openCard(target) {
@@ -177,65 +161,3 @@ function toggleTimer() {
   	timerUI.dataset.started = '';
   }
 }
-
-
-
-// two variant
-
-// const cards = document.querySelectorAll('.memo-card'); // Получаем массив элементов - карточек
-// let hasFlipCard = false; // Перевернута ли карточка
-// let boardLocked = false; //Запрет на кликание по другим карточкам пока открыты две одновременно
-// let firstCard; // сохроняем в переменнные DOM элементы для дальнейшнго сравнения
-// let secondCard;
-// console.log(cards);
-
-
-// const flipCard = (e) => {
-//     if(boardLocked) return;
-//     const target = e.target.parentElement;
-
-//     if(target === firstCard) return;  //если доска закрыта все действия прекращаются
-
-//     target.classList.add("flip");
-    
-//     if(!hasFlipCard) { //ПРоверяем какая была карточка
-//         //First click
-//         hasFlipCard = true;
-//         firstCard = target;
-//     }else{
-//         //Second click
-//         hasFlipCard = false;
-//         secondCard = target;
-//         checkForMatch(); // Проверка на совместимость, схожесть карточек (одинаковые ли)
-//     }
-// };
-// //Chek for match
-// function checkForMatch() {
-//     const isEqual = firstCard.dataset.ikon === secondCard.dataset.ikon;
-//     isEqual ? disableCards() : unflipCards(); // если тру остовляем карточки если false переворачиваем в исходное положение
-// }
-
-// function disableCards() {
-//     firstCard.removeEventListener('click', flipCard);
-//     secondCard.removeEventListener('click', flipCard);
-// }
-
-// function unflipCards() {
-//     boardLocked = true;
-//     setTimeout(() => {
-//         firstCard.classList.remove('flip');
-//         secondCard.classList.remove('flip');
-//         resetBoard();
-//     },700);
-// }
-
-// function resetBoard() {
-//     hasFlipCard = boardLocked = false;
-//     firstCard = secondCard = null;
-// }
-
-// cards.forEach(card => {
-//     card.addEventListener('click', flipCard);
-//     const randomIndex = Math.floor(Math.random() * cards.length);
-//     card.style.order = randomIndex;
-// });

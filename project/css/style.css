@@ -193,6 +193,10 @@ p {
 }
   
 .restart button {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	width: auto;
 	padding: 10px 20px;
 	background: rgb(136, 11, 199);
@@ -200,9 +204,20 @@ p {
 	border-radius: 5px;
 	color: #fff;
 	cursor: pointer;
-	margin-top: 50px;
-    /* transform: translate(-500px, -320px); */
 }
+
+.restart__block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	
+
+}
+	
+    /* transform: translate(-500px, -320px); */
+
 
 .game__container {
 	width: 100%;
