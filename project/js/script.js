@@ -78,7 +78,7 @@ restart.onclick = function() {
   toggleTimer();
   stepsCounter.innerHTML = 0;
   complitedCards = 0;
-  restartButton.hidden = false;
+  restartButton.hidden = true;
 }
 
 function openCard(target) {
