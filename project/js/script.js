@@ -28,11 +28,13 @@ cardsContent = doubleCards(cardsContent);
 createCardsOnGameField(field);
 
 gameField.onclick = function(e) {
+  
 	// wait while two wrong opened cards was closed;
   if (paused) { 
   	return; 
   }
   if (!timerUI.dataset.started) {
+    
   	toggleTimer();
   }
   if (e.target.dataset.status === 'opened'
@@ -59,13 +61,15 @@ gameField.onclick = function(e) {
 
   // clear openedCards array for next try
   openedCards = [];
+  let resultDisplay = document.querySelector('.result');
 
   if (complitedCards === cardsContent.length) {
+    resultDisplay.textContent = `Congratulations! You found them all! Your time: ${timerUI.innerHTML} and your steps: ${stepsCounter.innerHTML}`;
     restartButton.hidden = false;
   }
 }
 
-restart.onclick = function() {
+restartButton.onclick = function() {
   gameField.innerHTML = '';
   cardsContent = mixarr(cardsContent);
   // create cards in HTML
@@ -161,3 +165,8 @@ function toggleTimer() {
   	timerUI.dataset.started = '';
   }
 }
+
+
+
+
+
