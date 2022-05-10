@@ -75,7 +75,7 @@ restartButton.onclick = function() {
   // create cards in HTML
   for (let i = 0; i < cardsContent.length; i++) {
     gameField.insertAdjacentHTML('beforeend', cardViewInHTML);
-    // gameField.lastElementChild.innerHTML = cardsContent[i];
+    
     gameField.lastElementChild.innerHTML =  '<img class="card-image" src="' + cardsContent[i].getAttribute('src') + '">';
    
   }
@@ -114,8 +114,8 @@ function doubleCards(cardsContent) {
 function createCardsOnGameField(field) {
   for (let i = 0; i < cardsContent.length; i++) {
     field.insertAdjacentHTML('beforeend', cardViewInHTML);
-    //field.lastElementChild.innerHTML = '<img src="img/1.png">';
-    console.log(cardsContent[i].getAttribute('src'));
+    
+    
     
     field.lastElementChild.innerHTML = '<img class="card-image" src="' + cardsContent[i].getAttribute('src') + '">';
     
