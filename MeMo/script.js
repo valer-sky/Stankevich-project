@@ -1,17 +1,8 @@
-// "use strict";
-let toggleButton = document.querySelector('.toggle-menu');
-let navBar = document.querySelector('.nav-bar');
-toggleButton.addEventListener('click', function () {
-	navBar.classList.toggle('toggle');
-});
-
 let gameField      = document.getElementById('field');
 let restartButton  = document.getElementById('restart');
 let stepsCounter   = document.getElementById('steps');
 let timerUI        = document.getElementById('timer');
 let cardViewInHTML = '<div class="card card_closed" data-status="closed"></div>';
-
-// Метод Map()
 let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
     cardsContent = cardsContent.map((card) => {
      let img = new Image();
@@ -28,13 +19,11 @@ cardsContent = doubleCards(cardsContent);
 createCardsOnGameField(field);
 
 gameField.onclick = function(e) {
-  
 	// wait while two wrong opened cards was closed;
   if (paused) { 
   	return; 
   }
   if (!timerUI.dataset.started) {
-    
   	toggleTimer();
   }
   if (e.target.dataset.status === 'opened'
@@ -46,11 +35,15 @@ gameField.onclick = function(e) {
   stepsCounter.innerHTML = +stepsCounter.innerHTML + 1;
 
   if (openedCards.length !== 2) return;
-
+  let audio = new Audio('audio/zvuk-oshibki-vyibora.mp3');
+  audio.play();
   // set comlited status for matched cards, or close their with delay if not
   if (openedCards[0] === openedCards[1]) {
     setOpenedCardsStatus('complited', '');
     complitedCards += 2;
+    let audio = new Audio('audio/igrovaya-sreda-audio-energoobespechenie-audio-material-39368.mp3');
+    window.navigator.vibrate(200);
+  audio.play();
   } else {
     paused = true;
     setTimeout(() => {
@@ -61,28 +54,30 @@ gameField.onclick = function(e) {
 
   // clear openedCards array for next try
   openedCards = [];
-  let resultDisplay = document.querySelector('.result');
-
   if (complitedCards === cardsContent.length) {
-    resultDisplay.textContent = `Congratulations! You found them all! Your time: ${timerUI.innerHTML} and your steps: ${stepsCounter.innerHTML}`;
+    let audio = new Audio('audio/zvuk-pobedyi-v-igrovom-urovne-30120.mp3');
+      audio.play();
+    
     restartButton.hidden = false;
   }
 }
 
 restartButton.onclick = function() {
+  
   gameField.innerHTML = '';
   cardsContent = mixarr(cardsContent);
   // create cards in HTML
   for (let i = 0; i < cardsContent.length; i++) {
     gameField.insertAdjacentHTML('beforeend', cardViewInHTML);
-    
     gameField.lastElementChild.innerHTML =  '<img class="card-image" src="' + cardsContent[i].getAttribute('src') + '">';
-   
   }
   toggleTimer();
+  
   stepsCounter.innerHTML = 0;
   complitedCards = 0;
   restartButton.hidden = true;
+  
+  resultDisplay = '';
 }
 
 function openCard(target) {
@@ -114,11 +109,7 @@ function doubleCards(cardsContent) {
 function createCardsOnGameField(field) {
   for (let i = 0; i < cardsContent.length; i++) {
     field.insertAdjacentHTML('beforeend', cardViewInHTML);
-    
-    
-    
-    field.lastElementChild.innerHTML = '<img class="card-image" src="' + cardsContent[i].getAttribute('src') + '">';
-    
+    gameField.lastElementChild.innerHTML =  '<img class="card-image" src="' + cardsContent[i].getAttribute('src') + '">';
   }
 }
 
@@ -165,8 +156,3 @@ function toggleTimer() {
   	timerUI.dataset.started = '';
   }
 }
-
-
-
-
-
