@@ -42,6 +42,7 @@ gameField.onclick = function(e) {
     setOpenedCardsStatus('complited', '');
     complitedCards += 2;
     let audio = new Audio('audio/igrovaya-sreda-audio-energoobespechenie-audio-material-39368.mp3');
+    window.navigator.vibrate(200);
   audio.play();
   } else {
     paused = true;
@@ -53,9 +54,6 @@ gameField.onclick = function(e) {
 
   // clear openedCards array for next try
   openedCards = [];
-  // let resultDisplay = document.querySelector('.result');
-  
-  
   if (complitedCards === cardsContent.length) {
     let audio = new Audio('audio/zvuk-pobedyi-v-igrovom-urovne-30120.mp3');
       audio.play();

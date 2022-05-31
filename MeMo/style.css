@@ -102,7 +102,7 @@ p {
 
 @media (max-width: 615px) {
     .game__container {
-        margin-top: 100px;
+        margin-top: 5px;
     }
     .info {
         transform: translate(-120px, -20px);
@@ -121,7 +121,7 @@ p {
 
 @media (max-width: 500px) {
     .game__container {
-        margin-top: 40px;
+        margin-top: -40px;
     }
     .field {
         width: 400px;
@@ -133,7 +133,7 @@ p {
         height: 90px;
     }
     .info {
-        transform: translate(-150px, -20px);
+        transform: translate(-150px, 20px);
     }
     p {
         padding: 5px;
