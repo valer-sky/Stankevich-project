@@ -3,7 +3,7 @@ let restartButton  = document.getElementById('restart');
 let stepsCounter   = document.getElementById('steps');
 let timerUI        = document.getElementById('timer');
 let cardViewInHTML = '<div class="card card_closed" data-status="closed"></div>';
-let cardsContent  = [1,2,3,4,5,6,7,8,9,10,11,12];
+let cardsContent  = ['harp','domra','bagpipe','block flute','folk harp','guitar','maracas','piano','tambourine','tom-tom','trumpet','xylophone'];
     cardsContent = cardsContent.map((card) => {
      let img = new Image();
      img.src = `img/${card}.png`;
@@ -18,7 +18,7 @@ restartButton.hidden = true;
 cardsContent = doubleCards(cardsContent);
 createCardsOnGameField(field);
 
-gameField.onclick = function(e) {
+gameField.onclick = (e) => {
 	// wait while two wrong opened cards was closed;
   if (paused) { 
   	return; 
@@ -72,12 +72,9 @@ restartButton.onclick = function() {
     gameField.lastElementChild.innerHTML =  '<img class="card-image" src="' + cardsContent[i].getAttribute('src') + '">';
   }
   toggleTimer();
-  
   stepsCounter.innerHTML = 0;
   complitedCards = 0;
   restartButton.hidden = true;
-  
-  resultDisplay = '';
 }
 
 function openCard(target) {
@@ -101,7 +98,7 @@ function mixarr(arr) {
 }
 
 function doubleCards(cardsContent) {
-	cardsContent.push(...cardsContent);
+	cardsContent = [...cardsContent,...cardsContent];
 	cardsContent = mixarr(cardsContent);
   return cardsContent;
 }
@@ -118,7 +115,7 @@ function timer(elemId) {
   let seconds = '00';
   let milliseconds = '00';
 
-  let timerId = setInterval(() => {
+  const timerId = setInterval(() => {
     elemId.innerHTML = setTime();
     if (complitedCards === cardsContent.length) clearTimeout(timerId);
   }, 10);
